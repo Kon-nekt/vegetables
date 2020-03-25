@@ -1,0 +1,43 @@
+.osnova{
+    margin: 5vh auto 5vh auto;
+    font-family: 'Montserrat', sans-serif;
+    /*display: grid;*/
+    grid-template-rows: 12vh 2.4vh 15.1vh;
+    width: 35vh;
+    height: auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 3.2vh;
+    background-color: #FFFFFF;
+    text-align: center;
+    transition: height 350ms;
+}
+.mer_logo{
+    height: auto;
+    /*min-height: 250px;*/
+    width: auto;
+    /*width: 22.5vh;*/
+    background-color: #5A5B66;
+    border-radius: 3.2vh 3.2vh 0 0;
+}
+.mer_logo > img{
+    vertical-align: middle;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 3.2vh 3.2vh 0 0;
+}
+.mer_dopinfo{
+    height: 8vh;
+    font-size: 1.56vh;
+    line-height: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*text-align: center;*/
+    margin: 1vh auto 1.8vh auto;
+    /*letter-spacing: -0.02em;*/
+}
+
+@media only screen and (max-width: 991px){
+.osnova {
+    margin: 5vh auto 0 auto;
+}
+}

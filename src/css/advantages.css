@@ -1,0 +1,21 @@
+.advantages {
+}
+.fStroke {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+}
+
+.sStroke {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media only screen and (max-width: 991px){
+.fStroke{
+    grid-template-columns: 1fr;
+}
+.sStroke{
+    grid-template-columns: 1fr;
+}
+}
