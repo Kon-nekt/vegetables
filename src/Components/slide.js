@@ -9,7 +9,7 @@ const DemoCarousel = () =>
     {
         
         return (
-            <Carousel showThumbs = {false} autoPlay={true} infiniteLoop={true} dynamicHeight={false} showStatus={false} showIndicators={false}>
+            <Carousel showThumbs = {false} autoPlay={true} infiniteLoop={true} dynamicHeight={false} showStatus={false} showIndicators={false} interval={10000}>
                 <div>
                     <img src={img} />
                     <p className="legend">Legend 1</p>

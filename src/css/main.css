@@ -1,7 +1,17 @@
 body
 {
-font-family: 'Montserrat', sans-serif;
-font-size: 1.82vh;
-background: #F9FFF9;
-margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.82vh;
+    background: #F9FFF9;
+    margin: 0;
+}
+
+.footer
+{
+    height: 5vh;
+    width: 100%;
+    background-color: #19BB4F;
+    color:white;
+    text-align: center;
+    padding-top: 2vh;
 }
