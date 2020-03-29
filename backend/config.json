@@ -1,0 +1,20 @@
+{
+    "mongodb": {
+        "connection": {
+            "host": "192.236.146.174",
+            "port": 27017,
+            "source": "Vegetables",
+            "database": "Vegetables",
+            "username": "mg-admin",
+            "password": "2VppSR6r8wTvjmxEX"
+        },
+        "options": {
+            "useNewUrlParser": true,
+            "poolSize": 10,
+            "connectTimeoutMS": 30000,
+            "socketTimeoutMS": 30000,
+            "reconnectTries": 9,
+            "useUnifiedTopology": true
+        }
+    }
+}
