@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.css';
+import '../css/carousel.css';
 import '../css/slide.css'
 import img from './1.jpg'
 
@@ -8,7 +8,7 @@ import img from './1.jpg'
 const DemoCarousel = () =>
     {
         return (
-            <Carousel showThumbs = {false} autoPlay={true} infiniteLoop={true} dynamicHeight={false} showStatus={false}>
+            <Carousel showThumbs = {false} autoPlay={true} infiniteLoop={true} dynamicHeight={false} showStatus={false}> showIndicators={false} interval={10000}
                 <div>
                     <img alt="" src={img} />
                     <p className="legend">Legend 1</p>
