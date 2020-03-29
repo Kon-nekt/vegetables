@@ -4,6 +4,7 @@ import DemoCarousel from './Components/slide'
 import Advantages from './Components/advantages';
 import Sales from './Components/sales';
 import Categories from './Components/categories';
+import Footer from './Components/footer'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Categories name="Овощи" />
       <Categories name="Фрукты" />
       <Categories name="Грибы" />
+      <Footer />
     </div>
   );
 }
