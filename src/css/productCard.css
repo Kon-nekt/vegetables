@@ -1,0 +1,96 @@
+.osnova{
+    margin: 5vh auto 5vh auto;
+    font-family: 'Montserrat', sans-serif;
+    /*display: grid;*/
+    grid-template-rows: 5rem 1rem 6.5rem;
+    width: 20rem;
+    height: auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 3.2vh;
+    background-color: #FFFFFF;
+    text-align: center;
+    transition: height 350ms;
+}
+.mer_logo{
+    height: auto;
+    /*min-height: 250px;*/
+    width: auto;
+    /*width: 22.5vh;*/
+    background-color: #5A5B66;
+    border-radius: 3.2vh 3.2vh 0 0;
+}
+.mer_logo > img{
+    vertical-align: middle;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 3.2vh 3.2vh 0 0;
+}
+
+.mer_name{
+    font-size: 1.1rem;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    margin: 1vh auto 1.8vh auto;
+    /*letter-spacing: -0.02em;*/
+}
+
+.mer_dopinfo{
+    /* height: 8vh; */
+    font-size: 1rem;
+    /* line-height: 15px; */
+    /* overflow: hidden; */
+    /* text-overflow: ellipsis; */
+    /*text-align: center;*/
+    margin: 1rem;
+    /*letter-spacing: -0.02em;*/
+}
+.mer_old_price{
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: .2rem;
+    text-decoration: line-through;
+}
+
+.mer_price{
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
+.mer_sale{
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: #19BB4F;
+}
+
+.mer_button {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-weight:bold;
+	padding:.75rem 1rem;
+    text-shadow:0px 1px 0px #2f6627;
+    margin-bottom: 1.2rem;
+    width: 10rem;
+}
+.mer_button:hover {
+	background-color:#5cbf2a;
+}
+.mer_button:active {
+	position:relative;
+	top:1px;
+}
+
+
+@media only screen and (max-width: 991px){
+.osnova {
+    margin: 5vh auto 0 auto;
+}
+}

@@ -1,0 +1,26 @@
+.sales_header {
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 5rem;
+    font-weight: 600;
+    color: white;
+    background-color: #19BB4F;
+}
+
+.sales_footer {
+    height: 4.5rem;
+    background-color: #19BB4F;
+}
+
+@media only screen and (max-width: 991px){
+    .sales_header {
+        margin-top: 2rem;
+        font-size: .9rem;
+        line-height: 4rem;
+    }
+
+    .sales_footer {
+        margin-top: 3rem;
+        height: 3.5rem;
+    }
+}

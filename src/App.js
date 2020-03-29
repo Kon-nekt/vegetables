@@ -1,16 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './css/main.css';
 import DemoCarousel from './Components/slide'
 import Advantages from './Components/advantages';
-import Footer from './Components/footer';
+import Sales from './Components/sales';
+import Categories from './Components/categories';
 
 function App() {
   return (
     <div className="App">
       <DemoCarousel/>
       <Advantages/>
-      <Footer/>
+      <Sales />
+      <Categories name="Новинки" />
+      <Categories name="Овощи" />
+      <Categories name="Фрукты" />
+      <Categories name="Грибы" />
     </div>
   );
 }

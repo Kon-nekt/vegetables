@@ -1,0 +1,22 @@
+.categories_header{
+    font-size: 3rem;
+    margin-top: 6rem;
+    margin-left: 2rem;
+    text-indent: 3rem;
+    width: 60rem;
+    color: #19BB4F;
+    padding-bottom: .6rem;
+    border-bottom: .5rem solid #19BB4F;
+}
+
+@media only screen and (max-width: 991px){
+    .categories_header{
+        font-size: 2rem;
+        margin-top: 6rem;
+        margin-left: 0rem;
+        text-indent: 3rem;
+        width: 100vw;
+        padding-bottom: .2rem;
+        border-bottom: .3rem solid #19BB4F;
+    }
+}
