@@ -1,0 +1,31 @@
+.nav {
+    
+  }
+  .nav div {
+    padding-top: 1.5vh;
+    height: 100%;
+    cursor: pointer;
+  }
+  .nav div:hover {
+    color: #255800;
+    transition-duration: 0.4s;
+  }
+  .navBar {
+      z-index: 2;
+      background-color: #19BB4F;
+      height: 6vh;
+    font-size: 1.25vw;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    color: white;
+    position: fixed;
+    width: 100%;
+  }
+  @media only screen and (max-width: 991px)
+{
+.navBar{
+    visibility: hidden;
+}
+}
