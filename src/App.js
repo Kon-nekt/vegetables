@@ -8,6 +8,7 @@ import Footer from './Components/footer';
 import Header from './Components/header';
 import {Element,scroller } from 'react-scroll'
 import HeaderPC from './Components/headerPC';
+import Info from './Components/info';
 
 class App extends React.Component{
   constructor(props){
@@ -40,6 +41,7 @@ class App extends React.Component{
       <Categories name="Фрукты" />
       <Categories name="Грибы" />
       <Footer />
+      <Info/>
     </div>
   );
   }  
