@@ -5,6 +5,9 @@
 .carousel .slide {
     margin-top: 6vh;
 }
+.carousel.carousel-slider{
+    margin-top: 6vh !important;
+}
 @media only screen and (max-width: 991px){
     .carousel .slide {
         margin-top: 0;
