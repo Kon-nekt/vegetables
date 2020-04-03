@@ -40,7 +40,7 @@ class Panel extends Component {
     }
 
     async componentDidMount() {
-        const vegs = await axios.get('http://192.236.146.174:8000/vegs');
+        const vegs = await axios.get('/vegs');
         if (vegs)
             this.setState({
                 data: vegs.data.return,
@@ -59,7 +59,7 @@ class Panel extends Component {
 
         console.log(data[index]._id);
 
-        const response = await axios.delete(`http://192.236.146.174:8000/vegs${data[index]._id}`);
+        const response = await axios.delete(`/vegs${data[index]._id}`);
 
         alert(response.data.message);
 
@@ -71,7 +71,7 @@ class Panel extends Component {
 
     async handleEdit(index, dataFromCard) {
         const data = this.state.data;
-        const response = await axios.put('http://192.236.146.174:8000/vegs', { ...dataFromCard, _id: data[index]._id }, {
+        const response = await axios.put('/vegs', { ...dataFromCard, _id: data[index]._id }, {
             headers: {
                 'Content-Type': 'text/json',
             } });

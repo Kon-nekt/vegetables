@@ -5,10 +5,13 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Panel from './Components/panel';
+import Login from './Components/login';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,6 +22,9 @@ ReactDOM.render(
         </Route>
         <Route path="/panel">
           <Panel />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
       </Switch>
     </Router>

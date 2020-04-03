@@ -11,21 +11,23 @@ import Footer from './Components/footer'
 import Card from './Components/productCard';
 import HeaderPC from './Components/headerPC';
 import Info from './Components/info';
-import Login from './Components/login';
+import Header from './Components/header';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            data: []
+            data: [],
+            visibility:false,
         }
 
+        this.handleClick=this.handleClick.bind(this);
         this.dataRender = this.dataRender.bind(this);
     }
 
     async componentDidMount() {
-        const response = await axios.get('http://192.236.146.174:8000/vegs');
+        const response = await axios.get('/vegs');
 
         const data = response.data.return
 
@@ -35,8 +37,16 @@ class App extends React.Component {
     }
 
     cardRender(data) {
-        return(data.map(cardData => <Card key = {cardData._id} name={cardData.label} price={cardData.price} newPrice={cardData.salePrice} descr={cardData.description} image={cardData.image} type={ cardData.isSale ? "sale" : "normal" } />));
+        return(data.map(cardData => <Card key = { cardData._id } name={cardData.label} price={cardData.price} newPrice={cardData.salePrice} descr={cardData.description} image={cardData.image} type={ cardData.isSale ? "sale" : "normal" } />));
     }
+
+    handleClick(link){
+        scroller.scrollTo(`myScrollToElement${link}`, {
+            offset: -60,
+            duration: 300,
+            smooth: "easeInOutQuint"
+        });
+      }
 
     dataRender(data) {
         let cards = {};
@@ -72,7 +82,7 @@ class App extends React.Component {
             if (cards.hasOwnProperty(key)) {
                 const element = cards[key];
                 cardsToRender.push(
-                    <Element name={ `myScrollToElement${i}` }>
+                    <Element  key={ `myScrollToElement${i}` } name={ `myScrollToElement${i}` }>
                         <Categories key={ key } name={ key }>
                             {this.cardRender(element)}
                         </Categories>
@@ -88,14 +98,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <HeaderPC anchor={this.handleClick}/>
+        <Header anchor={this.handleClick}/>
         <DemoCarousel/>
         <Advantages/>
         <Sales />
         { this.dataRender(this.state.data) }
         <Footer />
+        <Info/>
       </div>
     );
   }
+
 }
 
 export default App;

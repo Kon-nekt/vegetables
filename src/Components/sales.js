@@ -14,7 +14,7 @@ class Sales extends React.Component {
     }
 
     async componentDidMount() {
-        const response = await axios.get('http://192.236.146.174:8000/vegs');
+        const response = await axios.get('/vegs');
 
         console.log(response.data.return);
 

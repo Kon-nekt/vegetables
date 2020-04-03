@@ -1,10 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const passport = require('passport');
-const session = require('express-session');
-const redisStore = require('connect-redis');
-const redis = require('redis');
+const cookieParser = require('cookie-parser');
 
 
 const router = require('../routers/main');
@@ -15,21 +12,10 @@ const router = require('../routers/main');
 
 const app = express();
 
-const RedisStore = redisStore(session);
 
-const redisClient = redis.createClient();
 
-const sessionMiddleware = session({
-    store: new RedisStore({ client: redisClient }),
-    secret: 'affsafasafs',
-    resave: true,
-    rolling: true,
-    saveUninitialized: false,
-    cookie: {
-        path: '/',
-        httpOnly: false,
-    },
-});
+app.use(cookieParser());
+
 
 
 app.use(cors({
@@ -40,9 +26,6 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(cookieParser());
-app.use(sessionMiddleware);
-app.use(passport.initialize());
-app.use(passport.session());
 
 // console.log(router);
 

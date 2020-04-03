@@ -61,7 +61,7 @@ class PanelAdderCard extends Component {
             let response = {};
 
             try {
-                response = await axios.post('http://192.236.146.174:8000/vegs', {
+                response = await axios.post('/vegs', {
                     label,
                     description,
                     category,

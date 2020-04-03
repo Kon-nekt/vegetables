@@ -12,6 +12,12 @@
     transition: height 350ms;
 }
 
+.fStroke {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+}
+
 .edtableImage{
     width: .5rem;
 }
@@ -70,11 +76,17 @@
 }
 
 @media only screen and (max-width: 991px){
-.osnova {
-    margin: 3rem auto 0 auto;
-    width: 20rem;
-}
-.editableBlock>textarea {
-    width: 15rem;
-}
+    .fStroke{
+        grid-template-columns: 1fr;
+    }
+    .sStroke{
+        grid-template-columns: 1fr;
+    }
+    .osnova {
+        margin: 3rem auto 0 auto;
+        width: 20rem;
+    }
+    .editableBlock>textarea {
+        width: 15rem;
+    }
 }
