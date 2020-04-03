@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {Element,scroller } from 'react-scroll'
 
 import './css/main.css';
 import DemoCarousel from './Components/slide'
@@ -8,7 +9,9 @@ import Sales from './Components/sales';
 import Categories from './Components/categories';
 import Footer from './Components/footer'
 import Card from './Components/productCard';
-
+import HeaderPC from './Components/headerPC';
+import Info from './Components/info';
+import Login from './Components/login';
 
 class App extends React.Component {
     constructor(props) {
@@ -63,14 +66,19 @@ class App extends React.Component {
 
         }
 
+        let i = 1;
+
         for (const key in cards) {
             if (cards.hasOwnProperty(key)) {
                 const element = cards[key];
                 cardsToRender.push(
-                    <Categories key={ key } name={ key }>
-                        {this.cardRender(element)}
-                    </Categories>
+                    <Element name={ `myScrollToElement${i}` }>
+                        <Categories key={ key } name={ key }>
+                            {this.cardRender(element)}
+                        </Categories>
+                    </Element>
                 )
+                i++;
             }
         }
 

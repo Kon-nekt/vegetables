@@ -25,9 +25,6 @@ class Card extends React.Component {
                                 <div className="mer_dopinfo">
                                     {this.props.descr}
                                 </div>
-                                {/* <button className="mer_button">
-                                    ЗАКАЗАТЬ
-                                </button> */}
                             </div>
             )
     }

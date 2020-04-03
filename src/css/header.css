@@ -1,0 +1,88 @@
+.bm-burger-button{
+    visibility: hidden;
+}
+.bm-item {
+    visibility: hidden;
+}    
+.bm-overlay {
+    visibility: hidden;
+}
+@media only screen and (max-width: 991px){
+.bm-burger-button {
+    visibility: visible;
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 30px;
+    top: 30px;
+  }
+  
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    background: #19BB4F;
+  }
+  
+  /* Color/shape of burger icon bars on hover*/
+  .bm-burger-bars-hover {
+    background: #a90000;
+  }
+  
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 4rem !important;
+    width: 4rem !important;
+  }
+  
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: #bdc3c7;
+  }
+  
+  /*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+  }
+  
+  /* General sidebar styles */
+  .bm-menu {
+    background: #F9FFF9;
+    padding: 4rem 1.5rem 0;
+    font-size: 1.15em;
+  }
+  
+  /* Morph shape necessary with bubble or elastic */
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+  
+  /* Wrapper for item list */
+  .bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8rem;
+    overflow: hidden;
+  }
+  
+  /* Individual item */
+  .bm-item {
+    visibility: visible;
+    display: inline-block;
+    width: auto;
+    margin: 0 0 3rem 0;
+    padding: 2rem 0 2rem 0;
+    cursor: pointer;
+  }
+  
+  /* Styling of overlay */
+  .bm-overlay {
+    visibility: visible;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  nav {
+      height: auto !important;
+  }
+}
