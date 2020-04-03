@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import img from './2.jpg';
 import '../css/productCard.css';
 
 class Card extends React.Component {
@@ -9,7 +8,7 @@ class Card extends React.Component {
         return(
             <div className="osnova">
                                 <div className="mer_logo">
-                                   <img src={img} alt="" />
+                                   <img src={this.props.image} alt="" />
                                 </div>
                                 <div className="mer_name">
                                     {this.props.name}
@@ -26,9 +25,9 @@ class Card extends React.Component {
                                 <div className="mer_dopinfo">
                                     {this.props.descr}
                                 </div>
-                                <button className="mer_button">
+                                {/* <button className="mer_button">
                                     ЗАКАЗАТЬ
-                                </button>
+                                </button> */}
                             </div>
             )
     }

@@ -1,0 +1,80 @@
+.osnova{
+    margin: 4rem auto 4rem auto;
+    font-family: 'Montserrat', sans-serif;
+    /*display: grid;*/
+    grid-template-rows: 5rem 1rem 6.5rem;
+    width: 25rem;
+    height: auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 3.2vh;
+    background-color: #FFFFFF;
+    text-align: center;
+    transition: height 350ms;
+}
+
+.edtableImage{
+    width: .5rem;
+}
+
+.notEditableLogo{
+    height: auto;
+    /*min-height: 250px;*/
+    width: auto;
+    /*width: 22.5vh;*/
+    background-color: #5A5B66;
+    border-radius: 3.2vh 3.2vh 0 0;
+}
+
+.notEditableLogo > img{
+    vertical-align: middle;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 3.2vh 3.2vh 0 0;
+}
+
+.editableBlock{
+    margin-top: .8rem;
+}
+
+.editableBlock>div, .editableBlock>label{
+    font-weight: 600;
+}
+
+.editableBlock>textarea, .editableBlock>input, .editableBlock>select{
+    font-size: 1rem;
+    padding:3px;
+    border-color:#cccccc;
+    border-style:solid;
+    border-radius:5px;
+    margin-top: .3rem!important;
+    border-width:2px;
+}
+
+.editableBlock>textarea {
+    width: 20rem;
+    height: 10rem;
+    resize: none;
+}
+
+.editableBlock>input{
+    width: 15rem;
+}
+
+.editableBlock>select{
+    font-size: 1.3rem;
+}
+
+#saleBox{
+    width: 1em;
+    padding-left: 2rem;
+}
+
+@media only screen and (max-width: 991px){
+.osnova {
+    margin: 3rem auto 0 auto;
+    width: 20rem;
+}
+.editableBlock>textarea {
+    width: 15rem;
+}
+}

@@ -1,19 +1,40 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import Card from './productCard';
 import '../css/sales.css'
 
 class Sales extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            data: []
+        }
+    }
+
+    async componentDidMount() {
+        const response = await axios.get('http://192.236.146.174:8000/vegs');
+
+        console.log(response.data.return);
+
+        const data = response.data.return.filter(value => value.isSale);
+
+        this.setState({
+            data,
+        })
+    }
+
+    dataRender(data) {
+        return(data.map(cardData => <Card key = {cardData._id + 1} name={cardData.label} price={cardData.price} newPrice={cardData.salePrice} descr={cardData.description} image={cardData.image} type="sale" />));
+    }
 
     render(){
         return(
             <>
                 <h1 className="sales_header">Распродажа! Только сегодня и только сейчас!</h1>
                 <div className = "fStroke">
-                    <Card name="Капуста" price="12" newPrice="7.85" descr="" type="sale"/>
-                    <Card name="Капуста" price="12" newPrice="7.85" descr="Предположим, что эта капуста не очень вкусная" type="normal"/>
-                    <Card name="Капуста" price="12" newPrice="7.85" descr="Предположим, что эта капуста не очень вкусная" type="sale"/>
+                    {this.dataRender(this.state.data)}
                 </div>
                 {/* <div className="sales_footer" /> */}
             </>

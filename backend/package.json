@@ -12,7 +12,8 @@
     "file-loader": "^6.0.0",
     "mongodb": "^3.5.5",
     "nodemailer": "^6.4.6",
-    "null-loader": "^3.0.0"
+    "null-loader": "^3.0.0",
+    "passport": "^0.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
