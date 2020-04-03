@@ -7,11 +7,15 @@ class Header extends React.Component {
     super(props);
     this.state={onActiveFirst:'Select',onActiveSecond:'nonSelect',onActiveThird:'nonSelect'};
   }
-
+  handleMenuClick(event) {
+    event.preventDefault();
+    // Using the parent component's state to keep track of the menu
+    this.setState({menuOpen: false});
+  }
   render () {
     // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
     return (
-      <Menu>
+      <Menu isOpen={ false }>
         <a id="vegetables" className="menu-item" onClick={()=>this.props.anchor('Овощи')}><div>Овощи</div></a>
         <a id="fruits" className="menu-item" onClick={()=>this.props.anchor('Фрукты')}><div>Фрукты</div></a>
         <a id="nuts" className="menu-item" onClick={()=>this.props.anchor('Орехи')}><div>Орехи</div></a>
