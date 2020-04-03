@@ -33,14 +33,22 @@ class App extends React.Component{
       <DemoCarousel/>
       <Advantages/>
       <Sales />
-      <Element name="myScrollToElement1">
       <Categories name="Новинки" />
-      </Element>
-      <Element name="myScrollToElement2">
+      <Element name="myScrollToElement1">
       <Categories name="Овощи" />
       </Element>
+      <Element name="myScrollToElement2">
       <Categories name="Фрукты" />
-      <Categories name="Грибы" />
+      </Element>
+      <Element name="myScrollToElement3">
+      <Categories name="Орехи" />
+      </Element>
+      <Element name="myScrollToElement4">
+      <Categories name="Конфеты" />
+      </Element>
+      <Element name="myScrollToElement5">
+      <Categories name="Фрукты в шоколаде" />
+      </Element>
       <Footer />
       <Info/>
     </div>
