@@ -29,7 +29,7 @@ class App extends React.Component {
     async componentDidMount() {
         const response = await axios.get('/vegs');
 
-        const data = response.data.return
+        const data = response.data.return.reverse();
 
         this.setState({
             data,
