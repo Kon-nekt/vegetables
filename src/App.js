@@ -9,6 +9,7 @@ import Header from './Components/header';
 import {Element,scroller } from 'react-scroll'
 import HeaderPC from './Components/headerPC';
 import Info from './Components/info';
+import Login from './Components/login';
 
 class App extends React.Component{
   constructor(props){
