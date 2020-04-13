@@ -2,24 +2,22 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import '../css/carousel.css';
 import '../css/slide.css'
-import img from './1.jpg'
-
+import first from './1.jpg'
+import second from './slide2.jpg'
+import third from './slide3.jpg'
 
 const DemoCarousel = () =>
     {
         return (
             <Carousel showThumbs = {false} autoPlay={true} infiniteLoop={true} dynamicHeight={false} showStatus={false} showIndicators={false} interval={10000}>
                 <div>
-                    <img alt="" src={img} />
-                    <p className="legend">Legend 1</p>
+                    <img alt="" src={first} />
                 </div>
                 <div>
-                    <img alt="" src={img} />
-                    <p className="legend">Legend 2</p>
+                    <img alt="" src={second} />
                 </div>
                 <div>
-                    <img alt="" src={img} />
-                    <p className="legend">Legend 3</p>
+                    <img alt="" src={third} />
                 </div>
             </Carousel>
         );
