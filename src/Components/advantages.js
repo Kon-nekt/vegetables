@@ -1,12 +1,38 @@
 import React from 'react';
-import Card from './card';
+import ACard from './ACard';
 import '../css/advantages.css'
+import axios from 'axios';
 
-const Advantages = () => {
-    return(
+class Advantages extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            Adata: [],
+            visibility:false,
+        }
+
+        this.handleClick=this.handleClick.bind(this);
+        this.dataRender = this.dataRender.bind(this);
+    }
+    async componentDidMount() {
+        const response = await axios.get('/desc');
+
+        const Adata = response.data.return.reverse();
+
+        this.setState({
+            Adata,
+        })
+    }
+    AcardRender(Adata) {
+        return(Adata.map(AcardData => <ACard key = { AcardData._id } name={AcardData.label} descr={AcardData.description} image={AcardData.image}/>));
+    }
+  render () {
+    return (
         <div className = "advantages">
-            <div className = "fStroke"><Card name="Капуста" price="12" descr="Предположим, что эта капуста очень вкусная" type="normal"/> <Card name="Капуста" price="12" newPrice="7.85" descr="Предположим, что эта капуста не очень вкусная" type="sale"/> <Card name="Огурцы" price="43" type="normal"/></div>
+            <div className = "fStroke">{this.AcardRender}</div>
         </div>
     )
+  }
 }
 export default Advantages;
