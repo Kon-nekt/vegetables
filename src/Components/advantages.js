@@ -12,8 +12,6 @@ class Advantages extends React.Component {
             visibility:false,
         }
 
-        this.handleClick=this.handleClick.bind(this);
-        this.dataRender = this.dataRender.bind(this);
     }
     async componentDidMount() {
         const response = await axios.get('/desc');
@@ -30,7 +28,7 @@ class Advantages extends React.Component {
   render () {
     return (
         <div className = "advantages">
-            <div className = "fStroke">{this.AcardRender}</div>
+            <div className = "fStroke">{this.AcardRender(this.state.Adata)}</div>
         </div>
     )
   }

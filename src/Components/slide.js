@@ -4,7 +4,6 @@ import '../css/carousel.css';
 import '../css/slide.css'
 import first from './1.jpg'
 import second from './slide2.jpg'
-import third from './slide3.jpg'
 
 const DemoCarousel = () =>
     {
@@ -15,9 +14,6 @@ const DemoCarousel = () =>
                 </div>
                 <div>
                     <img alt="" src={second} />
-                </div>
-                <div>
-                    <img alt="" src={third} />
                 </div>
             </Carousel>
         );

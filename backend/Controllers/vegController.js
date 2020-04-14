@@ -65,6 +65,58 @@ class vegController {
         });
     }
 
+    static addDesc(req, res) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                // console.log(req);
+                Validator.string(req.body.label);
+                Validator.string(req.body.description);
+                Validator.boolean(req.body.image);
+
+                const {label, description, imageType, image} = req.body;
+
+                const dir = `../storage`;
+
+                if(!fs.existsSync(dir))
+                    fs.mkdirSync(dir);
+
+                const newFileName = `${Date.now()}.${imageType}`;
+
+                fs.writeFile(`../storage/${newFileName}`, image.split(';base64,').pop(), 'base64', (err) => { console.log(err); });
+
+                const fileLink = `http://192.236.146.174:8000/storage/${newFileName}`;
+
+                const salePrice = req.body.salePrice || null;
+
+                const addedData = {
+                    label,
+                    description,
+                    salePrice,
+                    image: fileLink,
+                    time: Date.now(),
+                };
+
+                const insertedData = await mongodb.insertOne('desc', addedData);
+
+                return resolve(res.json({
+                    result: true,
+                    title: 'Добавление преимуществ',
+                    message: 'Успешно.',
+                    time: Date.now(),
+                    _id: insertedData.insertedId,
+                }));
+            } catch(err) {
+                console.log(err);
+                return reject(res.json({
+                    result: false,
+                    title: 'Добавление товаров',
+                    message: 'Серверная ошибка.',
+                    time: Date.now(),
+                }));
+            }
+        });
+    }
+
     static storage(req, res) {
         const path = req.url.slice(1);
         fs.readFile('../'+path, (err, image) => { console.log(err); return res.end(image) });
@@ -94,6 +146,31 @@ class vegController {
         });
     };
 
+    
+    static getDesc(req, res) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const data = await mongodb.getAll('desc');
+
+                return resolve(res.json({
+                    result: true,
+                    title: 'Получение товаров',
+                    message: 'Успешно.',
+                    time: Date.now(),
+                    return: data.reverse()
+                }));
+            } catch(err) {
+                console.log(err);
+                return reject(res.json({
+                    result: false,
+                    title: 'Получение товаров',
+                    message: 'Серверная ошибка.',
+                    time: Date.now(),
+                }));
+            }
+        });
+    };
+
     static delVegs(req, res) {
         return new Promise(async (resolve, reject) => {
             try {
@@ -103,6 +180,34 @@ class vegController {
                 const _id = req.params.id;
 
                 const data = await mongodb.deleteOne('vegs', { _id: mongodb.id(_id) });
+
+                return resolve(res.json({
+                    result: true,
+                    title: 'Получение товаров',
+                    message: 'Успешно.',
+                    time: Date.now(),
+                }));
+            } catch(err) {
+                console.log(err);
+                return reject(res.json({
+                    result: false,
+                    title: 'Получение товаров',
+                    message: 'Серверная ошибка.',
+                    time: Date.now(),
+                }));
+            }
+        });
+    };
+
+    static delDesc(req, res) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                console.log(req.params);
+                Validator.string(req.params.id);
+
+                const _id = req.params.id;
+
+                const data = await mongodb.deleteOne('desc', { _id: mongodb.id(_id) });
 
                 return resolve(res.json({
                     result: true,
@@ -198,6 +303,74 @@ class vegController {
             }
         });
     }
+
+
+    static putDesc(req, res) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                Validator.string(req.body.label);
+                Validator.string(req.body.description);
+                Validator.boolean(req.body.image);
+                Validator.string(req.body._id);
+
+                let { label, description, imageType, image, _id } = req.body;
+
+                if (image[0] !== 'h') {
+                    const findVeg = await mongodb.aggregate('desc', [
+                        { $match: { _id: mongodb.id(_id) } },
+                    ]);
+
+                    if (!findVeg.length)
+                        return resolve(res.json({
+                            result: false,
+                            title: 'Обновление товаров',
+                            message: 'Товар не найден.',
+                            time: Date.now(),
+                        }));
+
+                    const dir = `../storage`;
+
+                    fs.unlinkSync('../'+findVeg[0].image.slice(28));
+
+                    if(!fs.existsSync(dir))
+                        fs.mkdirSync(dir);
+
+                    const newFileName = `${Date.now()}.${imageType}`;
+
+                    fs.writeFileSync(`../storage/${newFileName}`, image.split(';base64,').pop(), 'base64');
+
+                    image = `http://192.236.146.174:8000/storage/${newFileName}`;
+                }
+
+                const addedData = {
+                    label,
+                    description,
+                    image,
+                    time: Date.now(),
+                };
+
+                console.log(addedData);
+
+                await mongodb.updateOne('desc', { _id: mongodb.id(_id) }, { $set: addedData });
+
+                return resolve(res.json({
+                    result: true,
+                    title: 'Обновление товаров',
+                    message: 'Успешно.',
+                    time: Date.now(),
+                }));
+            } catch(err) {
+                console.log(err);
+                return reject(res.json({
+                    result: false,
+                    title: 'Обновление товаров',
+                    message: 'Серверная ошибка.',
+                    time: Date.now(),
+                }));
+            }
+        });
+    }
+
 
     // static saveFile(req, res) {
     //     return new Promise(async (resolve, reject) => {

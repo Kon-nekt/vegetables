@@ -32,7 +32,7 @@ class Sales extends React.Component {
     render(){
         return(
             <>
-                <h1 className="sales_header">Распродажа! Только сегодня и только сейчас!</h1>
+                {(this.state.data.length !== 0) && <h1 className="sales_header">Распродажа! Только сегодня и только сейчас!</h1>}
                 <div className = "fStroke">
                     {this.dataRender(this.state.data)}
                 </div>

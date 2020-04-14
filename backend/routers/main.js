@@ -37,16 +37,32 @@ router.post('/vegs', authenticationMiddleware(), (req, res) => {
     controller.addVeg(req, res);
 });
 
+router.post('/desc', authenticationMiddleware(), (req, res) => {
+    controller.addDesc(req, res);
+});
+
 router.get('/vegs', (req, res) => {
     controller.getVegs(req, res);
+});
+
+router.get('/desc', (req, res) => {
+    controller.getDesc(req, res);
 });
 
 router.put('/vegs', authenticationMiddleware(), (req, res) => {
     controller.putVegs(req, res);
 })
 
+router.put('/desc', authenticationMiddleware(), (req, res) => {
+    controller.putDesc(req, res);
+})
+
 router.delete('/vegs:id', authenticationMiddleware(), (req, res) => {
     controller.delVegs(req, res);
+})
+
+router.delete('/desc:id', authenticationMiddleware(), (req, res) => {
+    controller.delDesc(req, res);
 })
 
 router.get('/storage/*',  (req, res) => {
@@ -70,7 +86,12 @@ router.post('/login', async function(req, res) {
         ]);
 
         if (!findVeg.length)
-           return res.status(401)
+           return res.json({
+            result: false,
+            title: 'Аутентификация',
+            message: 'НЕПРАВИЛЬНО',
+            time: Date.now(),
+        });
 
         bcrypt.compare(password, findVeg[0].password, (err, isValid) => {
             if (err) {

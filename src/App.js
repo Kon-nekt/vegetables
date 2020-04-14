@@ -82,7 +82,7 @@ class App extends React.Component {
             if (cards.hasOwnProperty(key)) {
                 const element = cards[key];
                 cardsToRender.push(
-                    <Element  key={ `myScrollToElement${name}` } name={ `myScrollToElement${name}` }>
+                    <Element  key={ `myScrollToElement${key}` } name={ `myScrollToElement${key}` }>
                         <Categories key={ key } name={ key }>
                             {this.cardRender(element)}
                         </Categories>
