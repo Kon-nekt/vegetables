@@ -3,7 +3,8 @@ import { Carousel } from 'react-responsive-carousel';
 import '../css/carousel.css';
 import '../css/slide.css'
 import first from './1.jpg'
-import second from './slide2.jpg'
+import second from './slide1.jpg'
+import third from './slide2.jpg'
 
 const DemoCarousel = () =>
     {
