@@ -29,7 +29,7 @@ class vegController {
 
                 fs.writeFile(`../storage/${newFileName}`, image.split(';base64,').pop(), 'base64', (err) => { console.log(err); });
 
-                const fileLink = `http://localhost:8000/storage/${newFileName}`;
+                const fileLink = `http://176.99.11.14:8000/storage/${newFileName}`;
 
                 const salePrice = req.body.salePrice || null;
 
@@ -84,7 +84,7 @@ class vegController {
 
                 fs.writeFile(`../storage/${newFileName}`, image.split(';base64,').pop(), 'base64', (err) => { console.log(err); });
 
-                const fileLink = `http://localhost:8000/storage/${newFileName}`;
+                const fileLink = `http://176.99.11.14:8000/storage/${newFileName}`;
 
                 const salePrice = req.body.salePrice || null;
 
@@ -266,7 +266,7 @@ class vegController {
 
                     fs.writeFileSync(`../storage/${newFileName}`, image.split(';base64,').pop(), 'base64');
 
-                    image = `http://localhost:8000/storage/${newFileName}`;
+                    image = `http://176.99.11.14:8000/storage/${newFileName}`;
                 }
 
                 const salePrice = req.body.salePrice || null;
@@ -339,7 +339,7 @@ class vegController {
 
                     fs.writeFileSync(`../storage/${newFileName}`, image.split(';base64,').pop(), 'base64');
 
-                    image = `http://localhost:8000/storage/${newFileName}`;
+                    image = `http://176.99.11.14:8000/storage/${newFileName}`;
                 }
 
                 const addedData = {
