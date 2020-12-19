@@ -78,7 +78,7 @@ router.get('/isUser', authenticationMiddleware(), (req, res) => {
 router.post('/login', async function(req, res) {
     try {
         const { username, password } = req.body;
-
+        console.log(password)
         const findVeg = await mongodb.aggregate('user', [
             { $match: {
                 login: username,
@@ -92,13 +92,13 @@ router.post('/login', async function(req, res) {
             message: 'НЕПРАВИЛЬНО',
             time: Date.now(),
         });
-
+        console.log(findVeg)
         bcrypt.compare(password, findVeg[0].password, (err, isValid) => {
             if (err) {
                 return res.json({
                     result: false,
                     title: 'Аутентификация',
-                    message: err,
+                    message: 'server failed',
                     time: Date.now(),
                 });
             }
@@ -106,7 +106,7 @@ router.post('/login', async function(req, res) {
                 return res.json({
                     result: false,
                     title: 'Аутентификация',
-                    message: 'error',
+                    message: 'Неверный пароль',
                     time: Date.now(),
                 });
             }
