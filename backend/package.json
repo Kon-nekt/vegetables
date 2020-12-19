@@ -7,6 +7,7 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-react": "^7.9.4",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "file-loader": "^6.0.0",
@@ -14,7 +15,8 @@
     "mongodb": "^3.5.5",
     "nodemailer": "^6.4.6",
     "null-loader": "^3.0.0",
-    "passport": "^0.4.1"
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -24,7 +24,7 @@ class Login extends React.Component {
 
     handleSubmit(event)
     {
-        axios.post('/login', { username: this.state.username, password: this.state.password })
+        axios.post('http://176.99.11.14:8000/login', { username: this.state.username, password: this.state.password })
             .then((req, res) => {
                 if (req.data.result) {
                     window.location.href = '/panel'

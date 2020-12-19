@@ -1,7 +1,7 @@
 {
     "mongodb": {
         "connection": {
-            "host": "192.236.146.174",
+            "host": "localhost",
             "port": 27017,
             "source": "Vegetables",
             "database": "Vegetables",
